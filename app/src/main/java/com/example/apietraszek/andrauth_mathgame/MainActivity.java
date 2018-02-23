@@ -15,11 +15,13 @@ public class MainActivity extends AppCompatActivity {
 
     private Integer value1;
     private Integer value2;
+    private Integer score;
     private TextView Number1;
     private TextView Number2;
     private EditText Attempt;
     private TextView Answer;
     private TextView TimerText;
+    private TextView PointsText;
     private boolean gameOn;
 
     @Override
@@ -29,9 +31,12 @@ public class MainActivity extends AppCompatActivity {
 
         Number1 = findViewById(R.id.number1);
         Number2 = findViewById(R.id.number2);
-        Attempt = findViewById(R.id.attempt);
+        Attempt = findViewById(R.id.attemptText);
         Answer = findViewById(R.id.answer);
         TimerText = findViewById(R.id.timerText);
+        PointsText = findViewById(R.id.pointsText);
+
+        score = 0;
 
         setNewNumbers();
 
@@ -45,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onFinish() {
                 TimerText.setText("done!");
                 gameOn = false;
+                Answer.setText("Your score is: "+score);
                 Attempt.setVisibility(View.GONE);
             }
         }.start();
@@ -56,11 +62,14 @@ public class MainActivity extends AppCompatActivity {
         if(Attempt.getText().toString().matches("")){
             //Context context = getApplicationContext();
             Toast.makeText(this, "Answer is missing!", Toast.LENGTH_SHORT).show();
+            Answer.setText("");
             return;
         }
         int userAnswer = Integer.parseInt(Attempt.getText().toString());
         if(value1+value2 == userAnswer) {
             Answer.setText("Correct!");
+            score++;
+            PointsText.setText("Points: "+score);
         } else {
             Answer.setText("Wrong, the correct answer was: " + (value1+value2));
         }
@@ -77,3 +86,4 @@ public class MainActivity extends AppCompatActivity {
         Attempt.setText("");
     }
 }
+6

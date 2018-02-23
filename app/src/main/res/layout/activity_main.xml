@@ -14,7 +14,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Math Game!"
+        android:text="@string/title"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,8 +53,9 @@
         app:layout_constraintVertical_bias="0.058" />
 
     <EditText
-        android:id="@+id/attempt"
-        android:layout_width="wrap_content"
+        android:id="@+id/attemptText"
+        android:labelFor="@id/attemptText"
+        android:layout_width="99dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -75,11 +76,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:onClick="onSubmitClick"
-        android:text="Submit"
+        android:text="@string/buttonText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/attempt"
+        app:layout_constraintTop_toBottomOf="@+id/attemptText"
         app:layout_constraintVertical_bias="0.078" />
 
     <TextView
@@ -94,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.306" />
+        app:layout_constraintVertical_bias="0.062" />
 
     <TextView
         android:id="@+id/timerText"
@@ -103,6 +104,15 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/pointsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

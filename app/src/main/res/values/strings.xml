@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AndrAuth_MathGame</string>
+    <string name="title">Math Game!</string>
+    <string name="buttonText">Submit</string>
 </resources>
